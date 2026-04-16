@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -62,6 +63,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.E))
         {
             rollInput = -1.0f;
+        }
+
+        // SHOOT
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("Shoot!");
         }
     }
 
