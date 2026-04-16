@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -9,6 +8,11 @@ public class PlayerController : MonoBehaviour
     [Header("Rotation Settings")]
     [SerializeField] private float mouseSensitivity = 150f;
     [SerializeField] private float rollSpeed = 50.0f;
+
+    [Header("Shoot Settings")]
+    [SerializeField] private GameObject bullet;
+    [SerializeField] private Transform look;
+    [SerializeField] private Transform bulletsContainer;
 
     private float horizontal;
     private float vertical;
@@ -68,7 +72,7 @@ public class PlayerController : MonoBehaviour
         // SHOOT
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Shoot!");
+            Instantiate(bullet, look.position, transform.rotation, bulletsContainer);
         }
     }
 
