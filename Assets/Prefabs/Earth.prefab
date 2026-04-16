@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6011595166705620709}
   - component: {fileID: 7260852418577874454}
   - component: {fileID: 3442095643454220899}
+  - component: {fileID: 8212682524985861126}
   m_Layer: 0
   m_Name: Moon
   m_TagString: Untagged
@@ -108,6 +109,21 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8212682524985861126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412210808161953482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb97ecb2abd1b6a4984958f2e9a4b471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orbitSpeed: 5
+  rotationSpeed: 3.5
+  center: {fileID: 1977128064337069725}
 --- !u!1 &2426133318731257676
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,6 +136,7 @@ GameObject:
   - component: {fileID: 3841364152988231818}
   - component: {fileID: 2736385236016647507}
   - component: {fileID: 488567594420734409}
+  - component: {fileID: 1835303847092829984}
   m_Layer: 0
   m_Name: Earth
   m_TagString: Untagged
@@ -217,3 +234,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1835303847092829984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2426133318731257676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb97ecb2abd1b6a4984958f2e9a4b471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orbitSpeed: 3.2
+  rotationSpeed: 3.2
+  center: {fileID: 7027166799987723094, guid: acbc45a4a3e68eb4a9015c8a3fedf476, type: 3}
