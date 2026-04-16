@@ -9,6 +9,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float mouseSensitivity = 150f;
     [SerializeField] private float rollSpeed = 50.0f;
 
+    private float horizontal;
+    private float vertical;
+    private float movementY;
+
+    private float mouseX;
+    private float mouseY;
+    private float rollInput;
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -17,13 +25,18 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        ReadInput();
         Movement();
         Rotation();
     }
 
-    private void Movement()
+    private void ReadInput()
     {
-        float movementY = 0.0f;
+        // MOVEMENT
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
+
+        movementY = 0.0f;
 
         if (Input.GetKey(KeyCode.Space))
         {
@@ -35,27 +48,35 @@ public class PlayerController : MonoBehaviour
             movementY = -1.0f;
         }
 
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), movementY, Input.GetAxis("Vertical"));
-        transform.Translate(movement * (speed * Time.deltaTime));
-    }
+        // ROTATION
+        mouseX = Input.GetAxis("Mouse X");
+        mouseY = Input.GetAxis("Mouse Y");
 
-    private void Rotation()
-    {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
-        float roll = 0.0f;
+        rollInput = 0.0f;
 
         if (Input.GetKey(KeyCode.Q))
         {
-            roll = 1.0f;
+            rollInput = 1.0f;
         }
 
         if (Input.GetKey(KeyCode.E))
         {
-            roll = -1.0f;
+            rollInput = -1.0f;
         }
+    }
 
-        roll *= Time.deltaTime * rollSpeed;
-        transform.Rotate(-mouseY, mouseX, roll, Space.Self);
+    private void Movement()
+    {
+        Vector3 movement = new Vector3(horizontal, movementY, vertical).normalized;
+        transform.Translate(movement * (speed * Time.deltaTime), Space.Self);
+    }
+
+    private void Rotation()
+    {
+        float pitch = mouseY * mouseSensitivity * Time.deltaTime;
+        float yaw = mouseX * mouseSensitivity * Time.deltaTime;
+        float roll = rollInput * rollSpeed * Time.deltaTime;
+
+        transform.Rotate(-pitch, yaw, roll, Space.Self);
     }
 }
