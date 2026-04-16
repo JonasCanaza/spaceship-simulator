@@ -37,6 +37,14 @@ public class PlayerController : MonoBehaviour
         Rotation();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("CelestialBody"))
+        {
+            Debug.Log("Player collided with celestial body!");
+        }
+    }
+
     private void ReadInput()
     {
         // MOVEMENT

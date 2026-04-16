@@ -18,7 +18,7 @@ public class BulletController : MonoBehaviour
 
         if (other.gameObject.layer == LayerMask.NameToLayer("CelestialBody"))
         {
-            Debug.Log("Collision with a celestial body!");
+            Debug.Log("Bullet collided with celestial body!");
         }
     }
 }
