@@ -5,24 +5,24 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement Settings")]
-    [SerializeField] private float speed = 10.0f;
+    [SerializeField] private float normalSpeed = 10.0f;
+    [SerializeField] private float turboSpeed = 20.0f;
+    private float horizontal;
+    private float vertical;
+    private float movementY;
+    private bool isTurboActive;
 
     [Header("Rotation Settings")]
     [SerializeField] private float mouseSensitivity = 150f;
     [SerializeField] private float rollSpeed = 50.0f;
+    private float mouseX;
+    private float mouseY;
+    private float rollInput;
 
     [Header("Shoot Settings")]
     [SerializeField] private GameObject bullet;
     [SerializeField] private Transform look;
     [SerializeField] private Transform bulletsContainer;
-
-    private float horizontal;
-    private float vertical;
-    private float movementY;
-
-    private float mouseX;
-    private float mouseY;
-    private float rollInput;
 
     private void Start()
     {
@@ -63,6 +63,9 @@ public class PlayerController : MonoBehaviour
             movementY = -1.0f;
         }
 
+        // TURBO
+        isTurboActive = Input.GetKey(KeyCode.LeftShift);
+
         // ROTATION
         mouseX = Input.GetAxis("Mouse X");
         mouseY = Input.GetAxis("Mouse Y");
@@ -88,8 +91,19 @@ public class PlayerController : MonoBehaviour
 
     private void Movement()
     {
+        float currentSpeed;
+
+        if (isTurboActive)
+        {
+            currentSpeed = turboSpeed;
+        }
+        else
+        {
+            currentSpeed = normalSpeed;
+        }
+
         Vector3 movement = new Vector3(horizontal, movementY, vertical).normalized;
-        transform.Translate(movement * (speed * Time.deltaTime), Space.Self);
+        transform.Translate(movement * (currentSpeed * Time.deltaTime), Space.Self);
     }
 
     private void Rotation()
