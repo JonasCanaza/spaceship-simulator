@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     [Header("Speed Settings")]
-    [SerializeField] private float speed = 30.0f;
+    [SerializeField] private float speed = 50.0f;
 
     private void Update()
     {

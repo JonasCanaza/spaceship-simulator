@@ -166,10 +166,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e03f2383aee2b674ca9a6cea33c84387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  turboSpeed: 20
-  mouseSensitivity: 150
-  rollSpeed: 50
+  movementMode: 0
+  kinematicNormalSpeed: 10
+  kinematicTurboSpeed: 20
+  physicsNormalSpeed: 15
+  physicsTurboSpeed: 30
+  maxLinearSpeed: 20
+  linearDamping: 1.5
+  kinematicMouseSensitivity: 375
+  kinematicRollSpeed: 75
+  physicsMouseSensitivity: 40
+  physicsRollSpeed: 8
+  maxAngularSpeed: 10
+  angularDamping: 5
   bullet: {fileID: 4038673701847295162, guid: 93e5b06defa6571438e6a9270030e1cf, type: 3}
   look: {fileID: 3436187589194825972}
   bulletsContainer: {fileID: 0}
