@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class AsteroidController : MonoBehaviour
 {
-    [SerializeField] private float rotationSpeed = 2.5f;
-    [SerializeField] private float moveSpeed = 2.0f;
+    [Header("Speed Setting")]
+    [SerializeField] private float rotationSpeed = 3.5f;
+    [SerializeField] private float moveSpeed = 3.5f;
 
     private Transform target;
 
