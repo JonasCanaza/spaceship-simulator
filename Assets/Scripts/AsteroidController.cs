@@ -26,6 +26,14 @@ public class AsteroidController : MonoBehaviour
         Movement();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            Debug.Log("Asteroid collided with player!");
+        }
+    }
+
     private void Rotation()
     {
         Vector3 direction = (target.position - transform.position).normalized;

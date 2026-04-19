@@ -14,11 +14,17 @@ public class BulletController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
-
         if (other.gameObject.layer == LayerMask.NameToLayer("CelestialBody"))
         {
+            Destroy(gameObject);
             Debug.Log("Bullet collided with celestial body!");
+        }
+
+        if (other.gameObject.layer == LayerMask.NameToLayer("Asteroid"))
+        {
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+            Debug.Log("Bullet collided with asteroid");
         }
     }
 }
