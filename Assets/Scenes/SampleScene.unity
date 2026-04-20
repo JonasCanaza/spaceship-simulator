@@ -1318,6 +1318,34 @@ PrefabInstance:
       propertyPath: bulletsContainer
       value: 
       objectReference: {fileID: 2011234775}
+    - target: {fileID: 8893046823307596472, guid: ee03999916fa3184a9f4e4a27ab4c3b1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8893046823307596472, guid: ee03999916fa3184a9f4e4a27ab4c3b1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8893046823307596472, guid: ee03999916fa3184a9f4e4a27ab4c3b1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9961947
+      objectReference: {fileID: 0}
+    - target: {fileID: 8893046823307596472, guid: ee03999916fa3184a9f4e4a27ab4c3b1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.08715578
+      objectReference: {fileID: 0}
+    - target: {fileID: 8893046823307596472, guid: ee03999916fa3184a9f4e4a27ab4c3b1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8893046823307596472, guid: ee03999916fa3184a9f4e4a27ab4c3b1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8893046823307596472, guid: ee03999916fa3184a9f4e4a27ab4c3b1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
