@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 50
+  hitSound: {fileID: 1159484860241782808, guid: fe99654ac68784d49b95aa086a53d8d0, type: 3}
 --- !u!114 &8875874447356475029
 MonoBehaviour:
   m_ObjectHideFlags: 0

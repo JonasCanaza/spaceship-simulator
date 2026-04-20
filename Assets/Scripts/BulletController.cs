@@ -6,6 +6,13 @@ public class BulletController : MonoBehaviour
 {
     [Header("Speed Settings")]
     [SerializeField] private float speed = 50.0f;
+    [SerializeField] private GameObject hitSound;
+    private Transform hitsSoundsContainer;
+
+    private void Start()
+    {
+        hitsSoundsContainer = GameObject.Find("Hit Sound Container").transform;
+    }
 
     private void Update()
     {
@@ -17,14 +24,19 @@ public class BulletController : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("CelestialBody"))
         {
             Destroy(gameObject);
-            Debug.Log("Bullet collided with celestial body!");
+            Explosion();
         }
 
         if (other.gameObject.layer == LayerMask.NameToLayer("Asteroid"))
         {
             Destroy(gameObject);
             Destroy(other.gameObject);
-            Debug.Log("Bullet collided with asteroid");
+            Explosion();
         }
+    }
+
+    private void Explosion()
+    {
+        Instantiate(hitSound, transform.position, Quaternion.identity, hitsSoundsContainer);
     }
 }

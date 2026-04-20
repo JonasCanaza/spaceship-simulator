@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject bullet;
     [SerializeField] private Transform look;
     [SerializeField] private Transform bulletsContainer;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip shootSound;
 
     private void Awake()
     {
@@ -144,6 +146,7 @@ public class PlayerController : MonoBehaviour
         // SHOOT
         if (Input.GetMouseButtonDown(0))
         {
+            audioSource.PlayOneShot(shootSound);
             Instantiate(bullet, look.position, transform.rotation, bulletsContainer);
         }
     }
