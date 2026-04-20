@@ -123,4 +123,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orbitSpeed: 1.5
   rotationSpeed: 1.5
+  speed: 1.7
   center: {fileID: 7027166799987723094, guid: acbc45a4a3e68eb4a9015c8a3fedf476, type: 3}
+  isDestructible: 1

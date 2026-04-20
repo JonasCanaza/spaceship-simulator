@@ -123,7 +123,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orbitSpeed: 5
   rotationSpeed: 3.5
+  speed: 3
   center: {fileID: 1977128064337069725}
+  isDestructible: 1
 --- !u!1 &2426133318731257676
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,4 +250,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orbitSpeed: 3.2
   rotationSpeed: 3.2
+  speed: 4
   center: {fileID: 7027166799987723094, guid: acbc45a4a3e68eb4a9015c8a3fedf476, type: 3}
+  isDestructible: 1
