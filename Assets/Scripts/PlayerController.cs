@@ -150,6 +150,12 @@ public class PlayerController : MonoBehaviour
             audioSource.PlayOneShot(shootSound);
             Instantiate(bullet, look.position, transform.rotation, bulletsContainer);
         }
+
+        // EXIT GAME
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            QuitGame();
+        }
     }
 
     private void ToggleMovementMode()
@@ -217,5 +223,14 @@ public class PlayerController : MonoBehaviour
         }
 
         return normal;
+    }
+
+    private void QuitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
 }
