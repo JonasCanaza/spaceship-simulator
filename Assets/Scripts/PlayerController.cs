@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody))]
 
@@ -78,9 +79,9 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("CelestialBody"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("CelestialBody") || other.gameObject.layer == LayerMask.NameToLayer("Asteroid"))
         {
-            Debug.Log("Player collided with celestial body!");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
