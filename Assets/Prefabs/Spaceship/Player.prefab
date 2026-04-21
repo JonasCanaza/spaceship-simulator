@@ -258,9 +258,9 @@ MonoBehaviour:
   physicsTurboSpeed: 30
   maxLinearSpeed: 20
   linearDamping: 1.5
-  kinematicMouseSensitivity: 375
+  kinematicMouseSensitivity: 500
   kinematicRollSpeed: 75
-  physicsMouseSensitivity: 40
+  physicsMouseSensitivity: 60
   physicsRollSpeed: 8
   maxAngularSpeed: 10
   angularDamping: 5
